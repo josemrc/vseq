@@ -131,6 +131,7 @@ def extract_vseq_data(tissue, tpaths, dstick, dsuppl, vseq):
                         vprt += ' ('+p+')'                    
                         vrep = {
                             'raw':          vraw,
+                            'scan':         vscn,
                             'modification': vmod,
                             'residue':      vres,
                             'protein':      vprt,
@@ -139,7 +140,6 @@ def extract_vseq_data(tissue, tpaths, dstick, dsuppl, vseq):
                             'peptide':      vpep,
                             'cxcorr':       vcxr,
                             'vseq': {
-                                'name':    vscn,
                                 'path':    vraw,
                                 'imgfile': vf
                             }

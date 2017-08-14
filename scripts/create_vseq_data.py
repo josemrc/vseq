@@ -144,6 +144,7 @@ def extract_vseq_data(tissue, tpaths, dstick, dsuppl, vseq):
                                 'imgfile': vf
                             }
                         }
+                        # vseqt['data'].append(vrep) # save all
                         # filter vseq data with the best cxcorr for each "FinalSeq_Mass"
                         if vpms in vfilter:
                             vr = vfilter[vpms]
@@ -158,6 +159,9 @@ def extract_vseq_data(tissue, tpaths, dstick, dsuppl, vseq):
                             outmdeltafile  = datapath + '/' + minusdeltafile
                             with open(outmdeltafile, 'a') as outfile:
                                 outfile.writelines(t)
+
+                else:
+                    logging.debug("NOT_MATCH_VSEQ: "+vkey+" : "+vpath+"/"+vf)
 
     tfname = 'vseq-'+tissue.lower()+'.json'
     tfile = datapath+'/'+'vseq-'+tissue.lower()+'.json'
